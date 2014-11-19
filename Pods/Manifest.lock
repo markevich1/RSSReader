@@ -1,0 +1,56 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - ISO8601DateFormatterValueTransformer (0.6.0):
+    - RKValueTransformers (~> 1.1.0)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
+  - RestKit (0.23.3):
+    - RestKit/Core
+  - RestKit/Core (0.23.3):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.23.3):
+    - RestKit/ObjectMapping
+  - RestKit/Network (0.23.3):
+    - AFNetworking (~> 1.3.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.23.3):
+    - ISO8601DateFormatterValueTransformer (~> 0.6.0)
+    - RestKit/Support
+    - RKValueTransformers (~> 1.1.0)
+  - RestKit/Support (0.23.3):
+    - TransitionKit (= 2.1.0)
+  - RKValueTransformers (1.1.0)
+  - RKXMLReaderSerialization (0.1.0):
+    - RestKit (>= 0.20.0dev)
+    - XMLReader (>= 0.0.2)
+  - SOCKit (1.1)
+  - TransitionKit (2.1.0)
+  - XMLReader (0.0.2)
+
+DEPENDENCIES:
+  - MagicalRecord
+  - RestKit (~> 0.22)
+  - RKXMLReaderSerialization (from `https://github.com/RestKit/RKXMLReaderSerialization.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  RKXMLReaderSerialization:
+    :branch: master
+    :git: https://github.com/RestKit/RKXMLReaderSerialization.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
+  ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  RestKit: 193a35cddae5198388977abaedad129f8acb978b
+  RKValueTransformers: b705e7b4651b9206b94600408462b74554bba969
+  RKXMLReaderSerialization: 4e4986e29782e05cf2f52d5076630304cfa6fb29
+  SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
+  TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
+  XMLReader: 2264fd2f8167343285a9943929c3b7e4b74626c0
+
+COCOAPODS: 0.34.1
