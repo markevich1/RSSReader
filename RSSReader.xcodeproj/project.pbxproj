@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BEDD62D7116B980828FFF3DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2B01526DDD8F3D52F6DCA9 /* libPods.a */; };
+		FA4D709D1A1D83BC0092390A /* AMNews.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4D709C1A1D83BC0092390A /* AMNews.m */; };
 		FAA26DBE1A1C13CD00C1E759 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DBD1A1C13CD00C1E759 /* Foundation.framework */; };
 		FAA26DC01A1C13CD00C1E759 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DBF1A1C13CD00C1E759 /* CoreGraphics.framework */; };
 		FAA26DC21A1C13CD00C1E759 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DC11A1C13CD00C1E759 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 		1C2B01526DDD8F3D52F6DCA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FCABF7E81F3417A22FA6C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E59C338037BB3BD781D11215 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA4D709B1A1D83BC0092390A /* AMNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMNews.h; path = ../AMNews.h; sourceTree = "<group>"; };
+		FA4D709C1A1D83BC0092390A /* AMNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMNews.m; path = ../AMNews.m; sourceTree = "<group>"; };
 		FAA26DBA1A1C13CD00C1E759 /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA26DBD1A1C13CD00C1E759 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAA26DBF1A1C13CD00C1E759 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,8 @@
 				FAB0D2DC1A1C279900D923ED /* NewsModel.xcdatamodeld */,
 				FAB0D2DF1A1C2A2100D923ED /* News.h */,
 				FAB0D2E01A1C2A2100D923ED /* News.m */,
+				FA4D709B1A1D83BC0092390A /* AMNews.h */,
+				FA4D709C1A1D83BC0092390A /* AMNews.m */,
 				FAA26DCC1A1C13CD00C1E759 /* AMAppDelegate.h */,
 				FAA26DCD1A1C13CD00C1E759 /* AMAppDelegate.m */,
 				FAA26DCF1A1C13CD00C1E759 /* Main.storyboard */,
@@ -313,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4D709D1A1D83BC0092390A /* AMNews.m in Sources */,
 				FAB0D2E11A1C2A2100D923ED /* News.m in Sources */,
 				FAB0D2DE1A1C279900D923ED /* NewsModel.xcdatamodeld in Sources */,
 				FAA26DCE1A1C13CD00C1E759 /* AMAppDelegate.m in Sources */,
