@@ -52,12 +52,25 @@
     
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
-        for(AMNews *news in [result array]) {
-            NSLog(@"\ntitle:%@\nlink:%@\npubDate:%@\nmedia:%@",news.title, news.link, news.pubDate, news.media);
-        }
+        [self saveNewsArrayToDatabase:[result array]];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         NSLog(@"Failed with error: %@", [error localizedDescription]);
     }];
     [operation start];
+}
+
+-(void)saveNewsArrayToDatabase:(NSArray*)newsArray
+{
+    [News MR_truncateAll];
+    for(AMNews *news in newsArray){
+        [news saveNewsToDatabase];
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+/*
+    NSArray *Array = [News MR_findAll];
+    for (News* news in Array) {
+        NSLog(@"\ntitle:%@\nlink:%@\npubDate:%@\nmedia:%@",news.title, news.link, news.pubDate, news.media);
+    }
+*/
 }
 @end

@@ -7,7 +7,17 @@
 //
 
 #import "AMNews.h"
+#import "News.h"
 
 @implementation AMNews
+
+-(void)saveNewsToDatabase
+{
+    News *news = [News MR_createEntity];
+    news.title = self.title;
+    news.link = self.link;
+    news.pubDate = self.pubDate;
+    news.media = self.media;
+}
 
 @end
