@@ -16,7 +16,7 @@
 		FAA26DCA1A1C13CD00C1E759 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA26DC91A1C13CD00C1E759 /* main.m */; };
 		FAA26DCE1A1C13CD00C1E759 /* AMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA26DCD1A1C13CD00C1E759 /* AMAppDelegate.m */; };
 		FAA26DD11A1C13CD00C1E759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA26DCF1A1C13CD00C1E759 /* Main.storyboard */; };
-		FAA26DD41A1C13CD00C1E759 /* AMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA26DD31A1C13CD00C1E759 /* AMViewController.m */; };
+		FAA26DD41A1C13CD00C1E759 /* AMGreetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA26DD31A1C13CD00C1E759 /* AMGreetingViewController.m */; };
 		FAA26DD61A1C13CD00C1E759 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA26DD51A1C13CD00C1E759 /* Images.xcassets */; };
 		FAA26DDD1A1C13CD00C1E759 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DDC1A1C13CD00C1E759 /* XCTest.framework */; };
 		FAA26DDE1A1C13CD00C1E759 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DBD1A1C13CD00C1E759 /* Foundation.framework */; };
@@ -57,8 +57,8 @@
 		FAA26DCC1A1C13CD00C1E759 /* AMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMAppDelegate.h; sourceTree = "<group>"; };
 		FAA26DCD1A1C13CD00C1E759 /* AMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMAppDelegate.m; sourceTree = "<group>"; };
 		FAA26DD01A1C13CD00C1E759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FAA26DD21A1C13CD00C1E759 /* AMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMViewController.h; sourceTree = "<group>"; };
-		FAA26DD31A1C13CD00C1E759 /* AMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMViewController.m; sourceTree = "<group>"; };
+		FAA26DD21A1C13CD00C1E759 /* AMGreetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMGreetingViewController.h; sourceTree = "<group>"; };
+		FAA26DD31A1C13CD00C1E759 /* AMGreetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMGreetingViewController.m; sourceTree = "<group>"; };
 		FAA26DD51A1C13CD00C1E759 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAA26DDB1A1C13CD00C1E759 /* RSSReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA26DDC1A1C13CD00C1E759 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -158,8 +158,8 @@
 				FAA26DCC1A1C13CD00C1E759 /* AMAppDelegate.h */,
 				FAA26DCD1A1C13CD00C1E759 /* AMAppDelegate.m */,
 				FAA26DCF1A1C13CD00C1E759 /* Main.storyboard */,
-				FAA26DD21A1C13CD00C1E759 /* AMViewController.h */,
-				FAA26DD31A1C13CD00C1E759 /* AMViewController.m */,
+				FAA26DD21A1C13CD00C1E759 /* AMGreetingViewController.h */,
+				FAA26DD31A1C13CD00C1E759 /* AMGreetingViewController.m */,
 				FAA26DD51A1C13CD00C1E759 /* Images.xcassets */,
 				FAA26DC41A1C13CD00C1E759 /* Supporting Files */,
 			);
@@ -334,7 +334,7 @@
 				FAA26DCE1A1C13CD00C1E759 /* AMAppDelegate.m in Sources */,
 				FAA5EA541A1ED43C00CFF3E8 /* AMDatabaseManager.m in Sources */,
 				FAA5EA511A1ECFE800CFF3E8 /* AMParser.m in Sources */,
-				FAA26DD41A1C13CD00C1E759 /* AMViewController.m in Sources */,
+				FAA26DD41A1C13CD00C1E759 /* AMGreetingViewController.m in Sources */,
 				FAA26DCA1A1C13CD00C1E759 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

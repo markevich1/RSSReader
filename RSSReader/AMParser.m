@@ -35,22 +35,34 @@
     [mapping addAttributeMappingsFromDictionary:@{
                                                   @"title.text" : @"title",
                                                   @"link.text" : @"link",
-                                                  @"media:content.url" : @"media",
+                                                  @"media:thumbnail.url" : @"media",
                                                   @"pubDate.text" : @"pubDate"
                                                   }];
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:nil
                                                                                            keyPath:@"rss.channel.item"
                                                                                        statusCodes:nil];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://news.tut.by/rss/all.rss"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://people.onliner.by/feed"]];
     
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
         [[AMDatabaseManager sharedInstance] saveNewsArrayToDatabase:[result array]];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed with error: %@", [error localizedDescription]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+           [self failedWithError:error];
+        });
+        
     }];
     [operation start];
+}
+
+- (void)failedWithError:(NSError*)error {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
+                                                    message:[error localizedDescription]
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

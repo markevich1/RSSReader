@@ -15,20 +15,7 @@
 {
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"NewsModel"];
-/*
-    News *newsTest = [News MR_createEntity];
-    newsTest.title = @"title";
-    newsTest.link = @"link";
-    newsTest.pubDate = @"pubDate";
-    newsTest.media = @"media";
 
-    NSArray *newsArray = [News MR_findAll];
-    for (News* news in newsArray) {
-        NSLog(@"\ntitle:%@\nlink:%@\npubDate:%@\nmedia:%@",news.title, news.link, news.pubDate, news.media);
-    }
-    [News MR_truncateAll];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-*/
     return YES;
 }
 							

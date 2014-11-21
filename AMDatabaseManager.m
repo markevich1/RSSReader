@@ -30,12 +30,12 @@
         [news saveNewsToDatabase];
     }
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-/*
+
      NSArray *Array = [News MR_findAll];
      for (News* news in Array) {
      NSLog(@"\ntitle:%@\nlink:%@\npubDate:%@\nmedia:%@",news.title, news.link, news.pubDate, news.media);
      }
-*/
+
 }
 
 
