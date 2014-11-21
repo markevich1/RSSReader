@@ -24,6 +24,8 @@
 		FAA26DE71A1C13CD00C1E759 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAA26DE51A1C13CD00C1E759 /* InfoPlist.strings */; };
 		FAA26DE91A1C13CD00C1E759 /* RSSReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA26DE81A1C13CD00C1E759 /* RSSReaderTests.m */; };
 		FAA26DF31A1C197900C1E759 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DF21A1C197900C1E759 /* CoreData.framework */; };
+		FAA5EA511A1ECFE800CFF3E8 /* AMParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5EA501A1ECFE800CFF3E8 /* AMParser.m */; };
+		FAA5EA541A1ED43C00CFF3E8 /* AMDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5EA531A1ED43C00CFF3E8 /* AMDatabaseManager.m */; };
 		FAB0D2DE1A1C279900D923ED /* NewsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAB0D2DC1A1C279900D923ED /* NewsModel.xcdatamodeld */; };
 		FAB0D2E11A1C2A2100D923ED /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB0D2E01A1C2A2100D923ED /* News.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,10 @@
 		FAA26DE61A1C13CD00C1E759 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAA26DE81A1C13CD00C1E759 /* RSSReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSReaderTests.m; sourceTree = "<group>"; };
 		FAA26DF21A1C197900C1E759 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FAA5EA4F1A1ECFE800CFF3E8 /* AMParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMParser.h; sourceTree = "<group>"; };
+		FAA5EA501A1ECFE800CFF3E8 /* AMParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMParser.m; sourceTree = "<group>"; };
+		FAA5EA521A1ED43C00CFF3E8 /* AMDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMDatabaseManager.h; path = ../AMDatabaseManager.h; sourceTree = "<group>"; };
+		FAA5EA531A1ED43C00CFF3E8 /* AMDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMDatabaseManager.m; path = ../AMDatabaseManager.m; sourceTree = "<group>"; };
 		FAB0D2DD1A1C279900D923ED /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 		FAB0D2DF1A1C2A2100D923ED /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		FAB0D2E01A1C2A2100D923ED /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
@@ -140,6 +146,10 @@
 		FAA26DC31A1C13CD00C1E759 /* RSSReader */ = {
 			isa = PBXGroup;
 			children = (
+				FAA5EA521A1ED43C00CFF3E8 /* AMDatabaseManager.h */,
+				FAA5EA531A1ED43C00CFF3E8 /* AMDatabaseManager.m */,
+				FAA5EA4F1A1ECFE800CFF3E8 /* AMParser.h */,
+				FAA5EA501A1ECFE800CFF3E8 /* AMParser.m */,
 				FAB0D2DC1A1C279900D923ED /* NewsModel.xcdatamodeld */,
 				FAB0D2DF1A1C2A2100D923ED /* News.h */,
 				FAB0D2E01A1C2A2100D923ED /* News.m */,
@@ -322,6 +332,8 @@
 				FAB0D2E11A1C2A2100D923ED /* News.m in Sources */,
 				FAB0D2DE1A1C279900D923ED /* NewsModel.xcdatamodeld in Sources */,
 				FAA26DCE1A1C13CD00C1E759 /* AMAppDelegate.m in Sources */,
+				FAA5EA541A1ED43C00CFF3E8 /* AMDatabaseManager.m in Sources */,
+				FAA5EA511A1ECFE800CFF3E8 /* AMParser.m in Sources */,
 				FAA26DD41A1C13CD00C1E759 /* AMViewController.m in Sources */,
 				FAA26DCA1A1C13CD00C1E759 /* main.m in Sources */,
 			);
