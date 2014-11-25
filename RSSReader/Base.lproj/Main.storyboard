@@ -121,10 +121,48 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="8QJ-SD-W0X"/>
+                    <connections>
+                        <segue destination="uSh-Ks-iMv" kind="push" identifier="pushWebViewScreen" id="eYw-Nf-S9X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACK-op-dwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1172" y="-54"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Uqh-Yv-PAc">
+            <objects>
+                <viewController id="uSh-Ks-iMv" customClass="AMWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OaB-6F-XJS"/>
+                        <viewControllerLayoutGuide type="bottom" id="o69-5r-wcO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8WU-lP-pcx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-FL-8DJ">
+                                <rect key="frame" x="10" y="74" width="300" height="484"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iZB-FL-8DJ" firstAttribute="leading" secondItem="8WU-lP-pcx" secondAttribute="leading" constant="10" id="IPA-1g-wmA"/>
+                            <constraint firstAttribute="bottom" secondItem="iZB-FL-8DJ" secondAttribute="bottom" constant="10" id="RBz-mg-Otm"/>
+                            <constraint firstItem="iZB-FL-8DJ" firstAttribute="top" secondItem="OaB-6F-XJS" secondAttribute="bottom" constant="10" id="fm8-BA-k96"/>
+                            <constraint firstAttribute="trailing" secondItem="iZB-FL-8DJ" secondAttribute="trailing" constant="10" id="wFl-0A-f32"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q3l-9t-wk0"/>
+                    <connections>
+                        <outlet property="webView" destination="iZB-FL-8DJ" id="inp-sb-jUa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dng-j8-0bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="-61"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DVM-Eg-1eS">

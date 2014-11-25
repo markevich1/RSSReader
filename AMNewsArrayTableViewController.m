@@ -10,6 +10,7 @@
 #import "AMDatabaseManager.h"
 #import "News.h"
 #import "AMNewsArrayTableViewCell.h"
+#import "AMWebViewController.h"
 
 @interface AMNewsArrayTableViewController ()
 
@@ -141,14 +142,27 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqualToString:@"pushWebViewScreen"]) {
+        
+        // note that "sender" will be the tableView cell that was selected
+        UITableViewCell *cell = (UITableViewCell*)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        AMWebViewController *vc = (AMWebViewController*)[segue destinationViewController];
+        vc.url = [[self.newsArray objectAtIndex:indexPath.row] link];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath
+                                                                    *)indexPath {
+    [self performSegueWithIdentifier:@"pushWebViewScreen" sender:self];
+}
 @end
