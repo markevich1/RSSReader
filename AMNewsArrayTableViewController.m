@@ -150,9 +150,7 @@
 {
     if ([segue.identifier isEqualToString:@"pushWebViewScreen"]) {
         
-        // note that "sender" will be the tableView cell that was selected
-        UITableViewCell *cell = (UITableViewCell*)sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        NSIndexPath *indexPath = sender;
         
         AMWebViewController *vc = (AMWebViewController*)[segue destinationViewController];
         vc.url = [[self.newsArray objectAtIndex:indexPath.row] link];
@@ -163,6 +161,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath
                                                                     *)indexPath {
-    [self performSegueWithIdentifier:@"pushWebViewScreen" sender:self];
+    [self performSegueWithIdentifier:@"pushWebViewScreen" sender:indexPath];
 }
 @end
