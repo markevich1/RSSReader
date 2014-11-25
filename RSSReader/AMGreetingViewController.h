@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMParser.h"
 
-@interface AMGreetingViewController : UIViewController
+@interface AMGreetingViewController : UIViewController <AMParserDelegate>
 
 @end

@@ -19,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [AMParser sharedInstance].delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -30,12 +31,19 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         [[AMParser sharedInstance] getAndParseRSS];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSegueWithIdentifier:@"push" sender:nil];
-        });
-    });}
+    });
+
+    
+    
+}
+-(void)showNewsArrayScreen{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"push" sender:nil];
+    });
+}
 @end

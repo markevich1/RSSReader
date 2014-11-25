@@ -45,11 +45,16 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://people.onliner.by/feed"]];
     
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
         [[AMDatabaseManager sharedInstance] saveNewsArrayToDatabase:[result array]];
+        if ([self.delegate respondsToSelector:@selector(showNewsArrayScreen)]) {
+            [self.delegate showNewsArrayScreen];
+        }
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
            [self failedWithError:error];
+            [self.delegate showNewsArrayScreen];
         });
         
     }];

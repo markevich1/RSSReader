@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BEDD62D7116B980828FFF3DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2B01526DDD8F3D52F6DCA9 /* libPods.a */; };
+		FA2F3B0C1A23E7740099D3BA /* AMNewsArrayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F3B0B1A23E7740099D3BA /* AMNewsArrayTableViewController.m */; };
+		FA2F3B0F1A23F25F0099D3BA /* AMNewsArrayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F3B0E1A23F25F0099D3BA /* AMNewsArrayTableViewCell.m */; };
 		FA4D709D1A1D83BC0092390A /* AMNews.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4D709C1A1D83BC0092390A /* AMNews.m */; };
 		FAA26DBE1A1C13CD00C1E759 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DBD1A1C13CD00C1E759 /* Foundation.framework */; };
 		FAA26DC01A1C13CD00C1E759 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DBF1A1C13CD00C1E759 /* CoreGraphics.framework */; };
@@ -44,6 +46,10 @@
 		1C2B01526DDD8F3D52F6DCA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FCABF7E81F3417A22FA6C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E59C338037BB3BD781D11215 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA2F3B0A1A23E7740099D3BA /* AMNewsArrayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMNewsArrayTableViewController.h; path = ../AMNewsArrayTableViewController.h; sourceTree = "<group>"; };
+		FA2F3B0B1A23E7740099D3BA /* AMNewsArrayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMNewsArrayTableViewController.m; path = ../AMNewsArrayTableViewController.m; sourceTree = "<group>"; };
+		FA2F3B0D1A23F25F0099D3BA /* AMNewsArrayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMNewsArrayTableViewCell.h; path = ../AMNewsArrayTableViewCell.h; sourceTree = "<group>"; };
+		FA2F3B0E1A23F25F0099D3BA /* AMNewsArrayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMNewsArrayTableViewCell.m; path = ../AMNewsArrayTableViewCell.m; sourceTree = "<group>"; };
 		FA4D709B1A1D83BC0092390A /* AMNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMNews.h; path = ../AMNews.h; sourceTree = "<group>"; };
 		FA4D709C1A1D83BC0092390A /* AMNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMNews.m; path = ../AMNews.m; sourceTree = "<group>"; };
 		FAA26DBA1A1C13CD00C1E759 /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +166,10 @@
 				FAA26DCF1A1C13CD00C1E759 /* Main.storyboard */,
 				FAA26DD21A1C13CD00C1E759 /* AMGreetingViewController.h */,
 				FAA26DD31A1C13CD00C1E759 /* AMGreetingViewController.m */,
+				FA2F3B0A1A23E7740099D3BA /* AMNewsArrayTableViewController.h */,
+				FA2F3B0B1A23E7740099D3BA /* AMNewsArrayTableViewController.m */,
+				FA2F3B0D1A23F25F0099D3BA /* AMNewsArrayTableViewCell.h */,
+				FA2F3B0E1A23F25F0099D3BA /* AMNewsArrayTableViewCell.m */,
 				FAA26DD51A1C13CD00C1E759 /* Images.xcassets */,
 				FAA26DC41A1C13CD00C1E759 /* Supporting Files */,
 			);
@@ -330,6 +340,8 @@
 			files = (
 				FA4D709D1A1D83BC0092390A /* AMNews.m in Sources */,
 				FAB0D2E11A1C2A2100D923ED /* News.m in Sources */,
+				FA2F3B0F1A23F25F0099D3BA /* AMNewsArrayTableViewCell.m in Sources */,
+				FA2F3B0C1A23E7740099D3BA /* AMNewsArrayTableViewController.m in Sources */,
 				FAB0D2DE1A1C279900D923ED /* NewsModel.xcdatamodeld in Sources */,
 				FAA26DCE1A1C13CD00C1E759 /* AMAppDelegate.m in Sources */,
 				FAA5EA541A1ED43C00CFF3E8 /* AMDatabaseManager.m in Sources */,

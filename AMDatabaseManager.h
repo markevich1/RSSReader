@@ -12,5 +12,6 @@
 
 + (AMDatabaseManager *)sharedInstance;
 -(void)saveNewsArrayToDatabase:(NSArray*)newsArray;
+-(NSArray*)getNewsArrayFromDatabase;
 
 @end

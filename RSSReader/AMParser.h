@@ -8,7 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol AMParserDelegate <NSObject>
+@required
+- (void)showNewsArrayScreen;
+@end
+
 @interface AMParser : NSObject
+
+@property (weak) id<AMParserDelegate> delegate;
 
 + (AMParser *)sharedInstance;
 - (void)getAndParseRSS;
