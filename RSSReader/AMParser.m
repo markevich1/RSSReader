@@ -27,7 +27,7 @@
 
 - (void)getAndParseRSS
 {
-    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/rss+xml"];
+    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"text/xml"];
     
     
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[AMNews class]];
