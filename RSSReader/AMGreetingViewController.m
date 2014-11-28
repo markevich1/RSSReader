@@ -29,21 +29,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        [[AMParser sharedInstance] getAndParseRSS];
-        
-    });
-
-    
-    
+    [[AMParser sharedInstance] getAndParseRSS];
 }
--(void)showNewsArrayScreen{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"push" sender:nil];
-    });
+
+-(void)showNewsArrayScreen
+{
+    [self performSegueWithIdentifier:@"push" sender:nil];
 }
 @end
