@@ -11,6 +11,7 @@
 
 
 @interface AMGreetingViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 
 @end
 
@@ -20,6 +21,7 @@
 {
     [super viewDidLoad];
     [AMParser sharedInstance].delegate = self;
+    self.loadingLabel.text = NSLocalizedString(@"loading", nil);
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

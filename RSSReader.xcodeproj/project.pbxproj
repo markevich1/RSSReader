@@ -11,7 +11,7 @@
 		FAA26DBE1A1C13CD00C1E759 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DBD1A1C13CD00C1E759 /* Foundation.framework */; };
 		FAA26DC01A1C13CD00C1E759 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DBF1A1C13CD00C1E759 /* CoreGraphics.framework */; };
 		FAA26DC21A1C13CD00C1E759 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA26DC11A1C13CD00C1E759 /* UIKit.framework */; };
-		FAA26DC81A1C13CD00C1E759 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAA26DC61A1C13CD00C1E759 /* InfoPlist.strings */; };
+		FAA26DC81A1C13CD00C1E759 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAA26DC61A1C13CD00C1E759 /* Localizable.strings */; };
 		FAA26DCA1A1C13CD00C1E759 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA26DC91A1C13CD00C1E759 /* main.m */; };
 		FAA26DCE1A1C13CD00C1E759 /* AMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA26DCD1A1C13CD00C1E759 /* AMAppDelegate.m */; };
 		FAA26DD11A1C13CD00C1E759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA26DCF1A1C13CD00C1E759 /* Main.storyboard */; };
@@ -52,7 +52,7 @@
 		FAA26DBF1A1C13CD00C1E759 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FAA26DC11A1C13CD00C1E759 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAA26DC51A1C13CD00C1E759 /* RSSReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RSSReader-Info.plist"; sourceTree = "<group>"; };
-		FAA26DC71A1C13CD00C1E759 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAA26DC71A1C13CD00C1E759 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAA26DC91A1C13CD00C1E759 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAA26DCB1A1C13CD00C1E759 /* RSSReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSReader-Prefix.pch"; sourceTree = "<group>"; };
 		FAA26DCC1A1C13CD00C1E759 /* AMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMAppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		FAB0D2DD1A1C279900D923ED /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 		FAB0D2DF1A1C2A2100D923ED /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		FAB0D2E01A1C2A2100D923ED /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		FAB0D57F1A2BD56F00093C3A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAB0D5801A2BD56F00093C3A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA26DC51A1C13CD00C1E759 /* RSSReader-Info.plist */,
-				FAA26DC61A1C13CD00C1E759 /* InfoPlist.strings */,
+				FAA26DC61A1C13CD00C1E759 /* Localizable.strings */,
 				FAA26DC91A1C13CD00C1E759 /* main.m */,
 				FAA26DCB1A1C13CD00C1E759 /* RSSReader-Prefix.pch */,
 			);
@@ -272,6 +274,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = FAA26DB11A1C13CD00C1E759;
 			productRefGroup = FAA26DBB1A1C13CD00C1E759 /* Products */;
@@ -290,7 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA26DD61A1C13CD00C1E759 /* Images.xcassets in Resources */,
-				FAA26DC81A1C13CD00C1E759 /* InfoPlist.strings in Resources */,
+				FAA26DC81A1C13CD00C1E759 /* Localizable.strings in Resources */,
 				FAA26DD11A1C13CD00C1E759 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,12 +379,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FAA26DC61A1C13CD00C1E759 /* InfoPlist.strings */ = {
+		FAA26DC61A1C13CD00C1E759 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FAA26DC71A1C13CD00C1E759 /* en */,
+				FAB0D57F1A2BD56F00093C3A /* ru */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		FAA26DCF1A1C13CD00C1E759 /* Main.storyboard */ = {
@@ -396,6 +400,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FAA26DE61A1C13CD00C1E759 /* en */,
+				FAB0D5801A2BD56F00093C3A /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

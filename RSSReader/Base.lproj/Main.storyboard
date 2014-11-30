@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LkN-UU-AEZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LkN-UU-AEZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Greeting View Controller-->
@@ -16,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-h1-ENi">
-                                <rect key="frame" x="120" y="132" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-h1-ENi">
+                                <rect key="frame" x="26" y="132" width="268" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="i7i-kI-yyK"/>
                                 </constraints>
@@ -27,21 +28,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="a05-fW-toT">
-                                <rect key="frame" x="150" y="161" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rae-h1-ENi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="120" id="biG-0o-gz1"/>
-                            <constraint firstAttribute="trailing" secondItem="Rae-h1-ENi" secondAttribute="trailing" constant="120" id="fmG-3F-fvq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rae-h1-ENi" secondAttribute="trailing" constant="10" id="In7-WS-hBh"/>
                             <constraint firstItem="Rae-h1-ENi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="68" id="pMj-XN-BbO"/>
+                            <constraint firstItem="Rae-h1-ENi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="w4Y-M9-hUx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rsI-U3-6Ji">
-                        <barButtonItem key="backBarButtonItem" title="Reload" id="X4n-Gv-IVQ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="rsI-U3-6Ji"/>
                     <connections>
+                        <outlet property="loadingLabel" destination="Rae-h1-ENi" id="0dl-aK-BSQ"/>
+                        <outlet property="navigationItem" destination="rsI-U3-6Ji" id="3ru-4Q-e8l"/>
                         <segue destination="mLx-G4-JzJ" kind="push" identifier="push" id="0aa-Ug-dIZ"/>
                     </connections>
                 </viewController>
@@ -67,7 +67,6 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Cx-PA-RiY">
                                             <rect key="frame" x="20" y="0.0" width="43" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="43" id="QsE-NE-oYI"/>
                                                 <constraint firstAttribute="width" constant="43" id="ZUP-E1-DXQ"/>
@@ -75,7 +74,6 @@
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="227" translatesAutoresizingMaskIntoConstraints="NO" id="Coa-ai-A5d">
                                             <rect key="frame" x="73" y="2" width="227" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
@@ -89,7 +87,6 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll4-bS-1Yt">
                                             <rect key="frame" x="73" y="32" width="227" height="11"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="11" id="0bB-s7-Xxo"/>
                                             </constraints>
@@ -143,7 +140,6 @@
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-FL-8DJ">
                                 <rect key="frame" x="10" y="74" width="300" height="484"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>

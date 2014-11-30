@@ -1,0 +1,9 @@
+
+/* Class = "IBUILabel"; text = "Загрузка"; ObjectID = "Rae-h1-ENi"; */
+"Rae-h1-ENi.text" = "Загрузка";
+
+/* Class = "IBUIBarButtonItem"; title = "Reload"; ObjectID = "X4n-Gv-IVQ"; */
+"X4n-Gv-IVQ.title" = "Reload";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "ll4-bS-1Yt"; */
+"ll4-bS-1Yt.text" = "Label";
