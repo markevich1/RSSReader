@@ -11,6 +11,7 @@
 
 static NSString * const segueIdentifier = @"push";
 static NSString * const loadingKey = @"loading";
+static NSString * const errorKey = @"error";
 
 @interface AMGreetingViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
@@ -44,4 +45,14 @@ static NSString * const loadingKey = @"loading";
 {
     [self performSegueWithIdentifier:segueIdentifier sender:nil];
 }
+
+- (void)failedWithError:(NSError*)error {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:errorKey
+                                                    message:[error localizedDescription]
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 @end

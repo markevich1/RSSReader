@@ -11,6 +11,7 @@
 @protocol AMParserDelegate <NSObject>
 @required
 - (void)showNewsArrayScreen;
+- (void)failedWithError:(NSError*)error;
 @end
 
 @interface AMParser : NSObject

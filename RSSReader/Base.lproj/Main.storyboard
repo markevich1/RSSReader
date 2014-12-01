@@ -27,13 +27,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="a05-fW-toT">
-                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="a05-fW-toT">
+                                <rect key="frame" x="150" y="161" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Rae-h1-ENi" secondAttribute="trailing" constant="10" id="In7-WS-hBh"/>
+                            <constraint firstItem="a05-fW-toT" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="161" id="Xse-A5-8pU"/>
+                            <constraint firstItem="a05-fW-toT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="134" id="Yqr-TP-fDF"/>
                             <constraint firstItem="Rae-h1-ENi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="68" id="pMj-XN-BbO"/>
                             <constraint firstItem="Rae-h1-ENi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="w4Y-M9-hUx"/>
                         </constraints>

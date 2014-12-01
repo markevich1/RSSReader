@@ -69,7 +69,10 @@ static NSString * const pubDateValue = @"pubDate";
         }
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-           [self failedWithError:error];
+           
+            if ([self.delegate respondsToSelector:@selector(failedWithError:)]) {
+                [self.delegate failedWithError:error];
+            }
             [self.delegate showNewsArrayScreen];
         });
         
@@ -79,13 +82,5 @@ static NSString * const pubDateValue = @"pubDate";
         });
 }
 
-- (void)failedWithError:(NSError*)error {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
-                                                    message:[error localizedDescription]
-                                                   delegate:self
-                                          cancelButtonTitle:@"Ok"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
 
 @end
