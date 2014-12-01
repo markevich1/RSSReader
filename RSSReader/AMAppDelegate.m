@@ -9,12 +9,14 @@
 #import "AMAppDelegate.h"
 #import "News.h"
 
+static NSString * const storeName = @"NewsModel";
+
 @implementation AMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"NewsModel"];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:storeName];
 
     return YES;
 }

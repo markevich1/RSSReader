@@ -9,19 +9,21 @@
 #import "AMGreetingViewController.h"
 #import "AMParser.h"
 
+static NSString * const segueIdentifier = @"push";
+static NSString * const loadingKey = @"loading";
 
 @interface AMGreetingViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
-
 @end
 
 @implementation AMGreetingViewController
-
+//const NSString *segueIdentifier = @"push";
 - (void)viewDidLoad
+
 {
     [super viewDidLoad];
     [AMParser sharedInstance].delegate = self;
-    self.loadingLabel.text = NSLocalizedString(@"loading", nil);
+    self.loadingLabel.text = NSLocalizedString(loadingKey, nil);
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -40,6 +42,6 @@
 
 -(void)showNewsArrayScreen
 {
-    [self performSegueWithIdentifier:@"push" sender:nil];
+    [self performSegueWithIdentifier:segueIdentifier sender:nil];
 }
 @end

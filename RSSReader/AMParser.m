@@ -12,6 +12,18 @@
 #import "AMNews.h"
 #import "AMDatabaseManager.h"
 
+static NSString * const mimeTypeString = @"text/xml";
+static NSString * const itemKeyPath = @"rss.channel.item";
+static NSString * const feedURLString = @"http://people.onliner.by/feed";
+static NSString * const titleKey = @"title.text";
+static NSString * const titleValue = @"title";
+static NSString * const linkKey = @"link.text";
+static NSString * const linkValue = @"link";
+static NSString * const mediaKey = @"media:thumbnail.url";
+static NSString * const mediaValue = @"media";
+static NSString * const pubDateKey = @"pubDate.text";
+static NSString * const pubDateValue = @"pubDate";
+
 @implementation AMParser
 
 + (AMParser *)sharedInstance
@@ -30,22 +42,23 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
     
-    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"text/xml"];
+    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:mimeTypeString];
     
     
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[AMNews class]];
     
     [mapping addAttributeMappingsFromDictionary:@{
-                                                  @"title.text" : @"title",
-                                                  @"link.text" : @"link",
-                                                  @"media:thumbnail.url" : @"media",
-                                                  @"pubDate.text" : @"pubDate"
+                                                  titleKey : titleValue,
+                                                  linkKey : linkValue,
+                                                  mediaKey : mediaValue,
+                                                  pubDateKey : pubDateValue
                                                   }];
     
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:nil
-                                                                                           keyPath:@"rss.channel.item"
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
+                                                                                            method:RKRequestMethodGET pathPattern:nil
+                                                                                           keyPath:itemKeyPath
                                                                                        statusCodes:nil];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://people.onliner.by/feed"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feedURLString]];
     
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
     
