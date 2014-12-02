@@ -9,22 +9,32 @@
 #import "AMGreetingViewController.h"
 #import "AMParser.h"
 
-static NSString * const segueIdentifier = @"push";
 static NSString * const loadingKey = @"loading";
 static NSString * const errorKey = @"error";
+static NSString * const nextButtonKey = @"show";
+static NSString * const reloadButtonKey = @"reload";
 
 @interface AMGreetingViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
+- (IBAction)reloadButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndikator;
+
 @end
 
 @implementation AMGreetingViewController
-//const NSString *segueIdentifier = @"push";
+
 - (void)viewDidLoad
 
 {
     [super viewDidLoad];
+    self.loadingLabel.hidden = YES;
+    self.activityIndikator.hidden = YES;
     [AMParser sharedInstance].delegate = self;
     self.loadingLabel.text = NSLocalizedString(loadingKey, nil);
+    [self.nextButton setTitle:NSLocalizedString(nextButtonKey, nil) forState:UIControlStateNormal];
+    [self.reloadButton setTitle:NSLocalizedString(reloadButtonKey, nil) forState:UIControlStateNormal];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -37,17 +47,16 @@ static NSString * const errorKey = @"error";
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-        
-    [[AMParser sharedInstance] getAndParseRSS];
 }
 
 -(void)showNewsArrayScreen
 {
-    [self performSegueWithIdentifier:segueIdentifier sender:nil];
+    self.loadingLabel.hidden = YES;
+    self.activityIndikator.hidden = YES;
 }
 
 - (void)failedWithError:(NSError*)error {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:errorKey
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(errorKey, nil)
                                                     message:[error localizedDescription]
                                                    delegate:self
                                           cancelButtonTitle:@"Ok"
@@ -55,4 +64,9 @@ static NSString * const errorKey = @"error";
     [alert show];
 }
 
+- (IBAction)reloadButtonAction:(id)sender {
+    self.loadingLabel.hidden = NO;
+    self.activityIndikator.hidden = NO;
+    [[AMParser sharedInstance] getAndParseRSS];
+}
 @end

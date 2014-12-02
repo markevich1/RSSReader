@@ -2,3 +2,5 @@
 
 loading = "Loading";
 error = "Error";
+show = "Show";
+reload = "Reload";
