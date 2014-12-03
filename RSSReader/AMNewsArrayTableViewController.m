@@ -11,6 +11,7 @@
 #import "News.h"
 #import "AMNewsArrayTableViewCell.h"
 #import "AMWebViewController.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface AMNewsArrayTableViewController ()
 
@@ -82,24 +83,27 @@
     
     cell.tag = indexPath.row;
     
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    dispatch_async(queue, ^{
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[self.newsArray objectAtIndex:indexPath.row] media]]];
-        UIImage *image = [[UIImage alloc] initWithData:imageData];
-        if (image) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (cell.tag == indexPath.row) {
-                    UIGraphicsBeginImageContext(CGSizeMake(43, 43));
-                    [image drawInRect:CGRectMake(0, 0, 43, 43)];
-                    UIImage *newSizeImage = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    
-                    cell.imageView.image = newSizeImage;
-                    [cell setNeedsLayout];
-                }
-            });
-        }
-    });
+//    cell.imageView.image = nil;
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[self.newsArray[indexPath.row] media]]];
+    
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+//    dispatch_async(queue, ^{
+//        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[self.newsArray objectAtIndex:indexPath.row] media]]];
+//        UIImage *image = [[UIImage alloc] initWithData:imageData];
+//        if (image) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                if (cell.tag == indexPath.row) {
+//                    UIGraphicsBeginImageContext(CGSizeMake(43, 43));
+//                    [image drawInRect:CGRectMake(0, 0, 43, 43)];
+//                    UIImage *newSizeImage = UIGraphicsGetImageFromCurrentImageContext();
+//                    UIGraphicsEndImageContext();
+//                    
+//                    cell.imageView.image = newSizeImage;
+//                    [cell setNeedsLayout];
+//                }
+//            });
+//        }
+//    });
 
     return cell;
 }
