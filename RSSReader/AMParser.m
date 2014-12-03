@@ -43,6 +43,7 @@ static NSString * const pubDateValue = @"pubDate";
 
     
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:mimeTypeString];
+    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/rss+xml"];
     
     
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[AMNews class]];
