@@ -9,8 +9,12 @@
 #import "AMNewsArrayTableViewController.h"
 #import "AMDatabaseManager.h"
 #import "News.h"
-#import "AMNewsArrayTableViewCell.h"
 #import "AMWebViewController.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
+static NSString * const tableCellIdentifier = @"cell";
+static NSString * const noImage = @"noimage";
+static NSString * const segueIdentifier = @"pushWebViewScreen";
 
 @interface AMNewsArrayTableViewController ()
 
@@ -35,6 +39,7 @@
 {
     [super viewDidLoad];
     self.newsArray = [[AMDatabaseManager sharedInstance]getNewsArrayFromDatabase];
+    
             // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -62,50 +67,14 @@
     return [self.newsArray count];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"cell";
-    
-    AMNewsArrayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-     if (cell == nil) {
-        cell = [[AMNewsArrayTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    
-    cell.titleLabel.text = [[self.newsArray objectAtIndex:indexPath.row] title];
-    cell.pubDateLabel.text = [[self.newsArray objectAtIndex:indexPath.row] pubDate];
-    cell.imageView.image = nil;
-    
-    cell.tag = indexPath.row;
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    dispatch_async(queue, ^{
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[self.newsArray objectAtIndex:indexPath.row] media]]];
-        UIImage *image = [[UIImage alloc] initWithData:imageData];
-        if (image) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (cell.tag == indexPath.row) {
-                    UIGraphicsBeginImageContext(CGSizeMake(43, 43));
-                    [image drawInRect:CGRectMake(0, 0, 43, 43)];
-                    UIImage *newSizeImage = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    
-                    cell.imageView.image = newSizeImage;
-                    [cell setNeedsLayout];
-                }
-            });
-        }
-    });
-
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCellIdentifier
+                                                            forIndexPath:indexPath];
+    News * news = [self.newsArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = news.title;
+    cell.detailTextLabel.text = news.pubDate;
+    [cell.imageView setImageWithURL:[NSURL URLWithString:news.media]placeholderImage:[UIImage imageNamed:noImage]];
     return cell;
 }
 
@@ -153,7 +122,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"pushWebViewScreen"]) {
+    if ([segue.identifier isEqualToString:segueIdentifier]) {
         
         NSIndexPath *indexPath = sender;
         
@@ -166,6 +135,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath
                                                                     *)indexPath {
-    [self performSegueWithIdentifier:@"pushWebViewScreen" sender:indexPath];
+    [self performSegueWithIdentifier:segueIdentifier sender:indexPath];
 }
 @end
