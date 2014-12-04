@@ -64,10 +64,11 @@ static NSString * const pubDateValue = @"pubDate";
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
     
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
-        [[AMDatabaseManager sharedInstance] saveNewsArrayToDatabase:[result array]];
+        [[AMDatabaseManager sharedInstance] saveNewsArrayToDatabase:[result array] completion:^{
         if ([self.delegate respondsToSelector:@selector(showNewsArrayScreen)]) {
             [self.delegate showNewsArrayScreen];
         }
+        }];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
            

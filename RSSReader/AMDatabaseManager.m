@@ -23,13 +23,14 @@
     return sharedInstance;
 }
 
--(void)saveNewsArrayToDatabase:(NSArray*)newsArray
+-(void)saveNewsArrayToDatabase:(NSArray*)newsArray completion:(void(^)(void))callback
 {
     [News MR_truncateAll];
     for(AMNews *news in newsArray){
         [news saveNewsToDatabase];
     }
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    callback();
 }
 
 -(NSArray*)getNewsArrayFromDatabase

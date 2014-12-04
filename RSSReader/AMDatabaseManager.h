@@ -11,7 +11,7 @@
 @interface AMDatabaseManager : NSObject
 
 + (AMDatabaseManager *)sharedInstance;
--(void)saveNewsArrayToDatabase:(NSArray*)newsArray;
+-(void)saveNewsArrayToDatabase:(NSArray*)newsArray completion:(void(^)(void))callback;
 -(NSArray*)getNewsArrayFromDatabase;
 
 @end
