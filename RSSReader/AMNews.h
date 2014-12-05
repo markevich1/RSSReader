@@ -15,6 +15,6 @@
 @property (nonatomic, retain) NSString * pubDate;
 @property (nonatomic, retain) NSString * media;
 
--(void)saveNewsToDatabase;
+-(void)createEntity;
 
 @end

@@ -10,7 +10,7 @@
 
 @protocol AMParserDelegate <NSObject>
 @required
-- (void)showNewsArrayScreen;
+- (void)endLoading;
 - (void)failedWithError:(NSError*)error;
 @end
 

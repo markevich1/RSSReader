@@ -65,8 +65,8 @@ static NSString * const pubDateValue = @"pubDate";
     
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
         [[AMDatabaseManager sharedInstance] saveNewsArrayToDatabase:[result array] completion:^{
-        if ([self.delegate respondsToSelector:@selector(showNewsArrayScreen)]) {
-            [self.delegate showNewsArrayScreen];
+        if ([self.delegate respondsToSelector:@selector(endLoading)]) {
+            [self.delegate endLoading];
         }
         }];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
@@ -75,7 +75,6 @@ static NSString * const pubDateValue = @"pubDate";
             if ([self.delegate respondsToSelector:@selector(failedWithError:)]) {
                 [self.delegate failedWithError:error];
             }
-            [self.delegate showNewsArrayScreen];
         });
         
     }];

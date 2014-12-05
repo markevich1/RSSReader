@@ -27,7 +27,7 @@
 {
     [News MR_truncateAll];
     for(AMNews *news in newsArray){
-        [news saveNewsToDatabase];
+        [news createEntity];
     }
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     callback();

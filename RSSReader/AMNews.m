@@ -11,7 +11,7 @@
 
 @implementation AMNews
 
--(void)saveNewsToDatabase
+-(void)createEntity
 {
     News *news = [News MR_createEntity];
     news.title = self.title;

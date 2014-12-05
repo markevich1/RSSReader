@@ -49,7 +49,7 @@ static NSString * const reloadButtonKey = @"reload";
     [super viewDidAppear:animated];
 }
 
--(void)showNewsArrayScreen
+-(void)endLoading
 {
     self.loadingLabel.hidden = YES;
     self.activityIndikator.hidden = YES;
@@ -62,6 +62,7 @@ static NSString * const reloadButtonKey = @"reload";
                                           cancelButtonTitle:@"Ok"
                                           otherButtonTitles:nil];
     [alert show];
+    [self endLoading];
 }
 
 - (IBAction)reloadButtonAction:(id)sender {
